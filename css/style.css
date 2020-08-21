@@ -78,6 +78,7 @@ html {
 }
 
 .header {
+  position: relative;
   background: #fff;
   height: 7rem;
   position: fixed;
@@ -127,10 +128,12 @@ html {
 }
 
 .sidebarbtn {
-  position: fixed;
-  top: 1rem;
+  position: absolute;
+  top: 50%;
   right: 3rem;
-  z-index: 111111111111;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 3;
   background: #fff;
   padding: 1rem 1rem 1.1rem 1rem;
   height: 5.5rem;
@@ -166,10 +169,6 @@ html {
   -webkit-transform: rotate(-135deg);
   transform: rotate(-135deg);
   margin-top: -9px;
-}
-
-#chk:checked ~ .sidebarbtn {
-  top: 1rem !important;
 }
 
 .sidebar {
@@ -430,14 +429,16 @@ html {
   height: 27rem !important;
   overflow: hidden;
   border: 1px solid #bdbdbd;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.gallery_img:hover {
+  border: 0.2rem solid #ff6d1a;
 }
 
 .gallery_img img {
   height: 25rem;
-}
-
-.gallery_img img:hover {
-  border: 0.2rem solid #ff6d1a;
 }
 
 .mfp-close {
